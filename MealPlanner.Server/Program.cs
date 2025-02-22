@@ -1,4 +1,8 @@
+using MealPlanner.Server;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var migrationScriptResults = MigrationScripts.Configure(builder.Configuration.GetConnectionString("DefaultConnection")!);
 
 // Add services to the container.
 
